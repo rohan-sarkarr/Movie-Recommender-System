@@ -6,11 +6,11 @@
    In this project, <b>genre, director name, actors name</b> are used to make recommendations.<br>
    </p>
    
-<img src="https://raw.githubusercontent.com/rohan-sarkarr/Movie-Recommender-System/main/static/images/cbfimg.png?" height ="320">
+<img src="https://raw.githubusercontent.com/rohan-sarkarr/Movie-Recommender-System/master/static/images/cbfimg.png" height ="320">
 
 ## How to run the project?
 
-1. Install all the libraries mentioned in the [requirements.txt](https://github.com/rohan-sarkarr/Movie-Recommender-System/main/requirements.txt) file.
+1. Install all the libraries mentioned in the [requirements.txt](https://raw.githubusercontent.com/rohan-sarkarr/Movie-Recommender-System/master/requirements.txt) file.
 2. Clone this repository in your local system.
 3. Open the command prompt from your project directory and run the command `python app.py`.
 4. Go to your browser and type `http://127.0.0.1:5000/` in the address bar.
