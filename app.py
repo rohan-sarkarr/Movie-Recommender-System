@@ -7,7 +7,7 @@ app = flask.Flask(__name__, template_folder='templates')
 
 data = pd.read_csv('main_data.csv')
 
-count = CountVectorizer(stop_words='english')
+count = CountVectorizer()
 count_matrix = count.fit_transform(data['comb'])
 
 data = data.reset_index()
@@ -21,11 +21,11 @@ def get_recommendations(title):
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     sim_scores = sim_scores[1:11]
     movie_indices = [i[0] for i in sim_scores]
-    tit = data['title'].iloc[movie_indices]
+    title = data['title'].iloc[movie_indices]
     dat = data['date_published'].iloc[movie_indices]
     rat = data['avg_vote'].iloc[movie_indices]
     return_df = pd.DataFrame(columns=['Title','Year','Votes'])
-    return_df['Title'] = tit
+    return_df['Title'] = title
     return_df['Year'] = dat
     return_df['Votes'] = rat
     return return_df
@@ -35,12 +35,12 @@ def get_recommendations(title):
 
 def main():
     if flask.request.method == 'GET':
-        return(flask.render_template('index.html'))
+        return(flask.render_template('index.php'))
             
     if flask.request.method == 'POST':
         m_name = flask.request.form['movie_name']
         if m_name not in all_titles:
-            return(flask.render_template('negative.html',name=m_name))
+            return(flask.render_template('negative.php',name=m_name))
         else:
             result_final = get_recommendations(m_name)
             names = []
@@ -49,9 +49,9 @@ def main():
             for i in range(len(result_final)):
                 names.append(result_final.iloc[i][0])
                 dates.append(result_final.iloc[i][1])
-                ratings.append(result_final.iloc[i][2])
-
-            return flask.render_template('positive.html',movie_names=names,movie_date=dates,movie_rating= ratings,search_name=m_name)
+                ratings.append(result_final.iloc[i][2])                
+                
+            return flask.render_template('positive.php',movie_names=names,movie_date=dates,movie_rating= ratings,search_name=m_name)
 
 if __name__ == '__main__':
     app.run()
