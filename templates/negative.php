@@ -5,43 +5,61 @@
     <meta charset="UTF-8">
     <title>Not Found</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
         * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
             font-family: 'PT Sans Caption', sans-serif, 'arial', 'Times New Roman';
         }
         
-        #content {
-            background-image: url("../static/images/bgimg.jpg");
-            background-color: #181818
+        a:hover {
+            cursor: pointer;
+        }
+        
+        body {
+            font-weight: 300;
+            font-size: 100%;
+            background-image: url('../static/images/bgimg.jpg');
+            line-height: 1.5;
+            color: white;
+        }
+        
+        .text-center {
+            text-align: center;
+            margin-bottom: 20px;
         }
         
         .button {
             font-weight: 300;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.2rem;
             text-decoration: none;
             border: 1px solid #efefef;
-            padding: 1em;
+            padding: 1rem;
             background: black;
-            border-radius: 3px;
-            float: left;
-            margin: 6em 0 0 -155px;
-            left: 50%;
+            border-radius: 5px;
+            margin-top: 30px;
+            margin-left: 700px;
+            align-items: center;
             position: relative;
-            transition: all .3s linear;
         }
         
-        .button:hover {
-            background-color: #ffbf00;
-            color: black;
-            box-shadow: 0px 0px 5px -2px grey;
+        ul {
+            margin-top: 30px;
+            font-size: 30px;
+        }
+        
+        ul li {
+            list-style-type: none;
         }
     </style>
 </head>
 
-<body id="content" style="color: white; margin-top: 250px;">
-    <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
+<body style="color: white; margin-top: 250px;">
+
     <div class="text-center">
         <h1 style="text-shadow: 0 0 20px #fffb00; ">Sorry! Page not found. Possible reason(s):</h1>
         <ul>
@@ -49,15 +67,15 @@
             <li>The movie name does not exist in the database.</li>
         </ul>
     </div>
-    <a class="button" onClick="goBack()"><i class="fas fa-home"></i> Go Back to Home Page &amp; Try Again.</a>
-    </div>
+    <a class="button" onClick="goBack()"><i class="fas fa-home"></i> Back</a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 </body>
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>
 
 </body>
 
