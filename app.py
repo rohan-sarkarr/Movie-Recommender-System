@@ -35,12 +35,12 @@ def get_recommendations(title):
 
 def main():
     if flask.request.method == 'GET':
-        return(flask.render_template('index.php'))
+        return(flask.render_template('index.html'))
             
     if flask.request.method == 'POST':
         m_name = flask.request.form['movie_name']
         if m_name not in all_titles:
-            return(flask.render_template('negative.php',name=m_name))
+            return(flask.render_template('negative.html',name=m_name))
         else:
             result_final = get_recommendations(m_name)
             names = []
@@ -51,7 +51,7 @@ def main():
                 dates.append(result_final.iloc[i][1])
                 ratings.append(result_final.iloc[i][2])                
                 
-            return flask.render_template('positive.php',movie_names=names,movie_date=dates,movie_rating= ratings,search_name=m_name)
+            return flask.render_template('positive.html',movie_names=names,movie_date=dates,movie_rating= ratings,search_name=m_name)
 
 if __name__ == '__main__':
     app.run()
