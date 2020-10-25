@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Movie Recommender</title>
+    <title>Movie Recommender System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:300,500&amp;display=swap'>
