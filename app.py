@@ -31,7 +31,7 @@ def get_recommendations(title):
     return return_df
 
 # Set up the main route
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/main', methods=['GET', 'POST'])
 
 def main():
     if flask.request.method == 'GET':
