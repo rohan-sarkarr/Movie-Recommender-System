@@ -4,13 +4,12 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 app = flask.Flask(__name__, template_folder='templates')
-
+  
 data = pd.read_csv('main_data.csv')
 
 count = CountVectorizer()
 count_matrix = count.fit_transform(data['comb'])
 
-data = data.reset_index()
 indices = pd.Series(data.index, index=data['title'])
 all_titles = [data['title'][i] for i in range(len(data['title']))]
 
